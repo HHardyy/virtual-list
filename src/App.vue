@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 告诉每一项的高度，每个可视区有几项, 数据源 -->
-   <virtualList :size='40' :remain='8' :items='items'>
+   <virtualList :size='100' :remain='8' :items='items' variable>
      <item slot-scope="{item}" :item="item"></item>
    </virtualList>
   </div>
@@ -10,13 +10,15 @@
 <script>
 import VirtualList from '@/components/vurtual-list'
 import Item from '@/components/item/item'
+// 使用mock数据来模拟未确定的数据以及不定宽高的盒子
+import Mock from 'mockjs'
 
 // MOCK DATA
 let items = []
 for(let i=0; i< 10000; i++) {
   items.push({
     id:i,
-    value:`#item ${i}`
+    value: Mock.Random.sentence(5,20)
   })
 }
 

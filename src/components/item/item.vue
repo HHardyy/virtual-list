@@ -1,5 +1,5 @@
 <template>
-    <div class="item">{{item.value}}</div>
+    <div class="item">#{{item.id}}-{{item.value}}</div>
 </template>
 
 <script>
@@ -12,7 +12,8 @@ export default {
 
 <style scoped>
     .item{
-        height: 40px;
+        /* height: 40px; */
         border: 1px solid #000;
+        padding: 20px 0;
     }
 </style>
