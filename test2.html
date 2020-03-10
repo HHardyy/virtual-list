@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let total = 10000;
+        let index = 0;
+        let id = 0;
+
+        function load(){
+            index += 50;
+            if(index < total){
+                // setTimeout(() => {
+                //     for(let i = 0; i < 50; i++){
+                //         let oLi = document.createElement('li')
+                //         oLi.innerHTML = id++
+                //         container.appendChild(oLi)
+                //     } 
+                // }, 0);
+
+                requestAnimationFrame(() => {
+                    let fragment = document.createDocumentFragment()  // ie使用文档碎片
+                    for(let i = 0; i < 50; i++){
+                        let oLi = document.createElement('li')
+                        oLi.innerHTML = id++
+                        fragment.appendChild(oLi)
+                    } 
+                    container.appendChild(fragment)
+                    load()
+                }, 0);
+            }
+        }
+        load()
+    </script>
+</body>
+</html>

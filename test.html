@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let total = 100000
+        let timer = Date.now();
+        for(let i=0; i< total; i++) {
+            let oLi = document.createElement('li');
+            oLi.innerHTML = i;
+            container.appendChild(oLi)
+        }
+        console.log(Date.now() - timer); // 算得是js的执行时间
+
+        setTimeout((...args) => {
+            console.log(Date.now() - timer)
+            console.log(args)
+        },
+        console.log('hello word')
+        , 10, 'hardy1','hardy2', 'hardy3');
+        
+    </script>
+</body>
+</html>
