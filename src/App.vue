@@ -24,18 +24,8 @@ for(let i=0; i< 10000; i++) {
 
 export default {
   name: 'App',
-  data(){
-    return {
-      items
-    }
-  },
-  components: {
-    VirtualList,
-    Item
-  },
-  methods: {
-    functiona()   {}
-  }
+  data(){ return {items}},
+  components: {VirtualList,Item}
 }
 </script>
 
